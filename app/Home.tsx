@@ -1,13 +1,7 @@
-import { Poppins } from "next/font/google";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import LoginButton from "@/components/auth/login-button";
-import { LockClosedIcon } from "@radix-ui/react-icons";
-
-const font = Poppins({
-  subsets: ["latin"],
-  weight: ["600"],
-});
+import { font } from "./page";
 
 export default function Home() {
   return (
@@ -15,11 +9,10 @@ export default function Home() {
       <div className='space-y-6 text-center'>
         <h1
           className={cn(
-            "flex items-center justify-center text-6xl font-semibold text-white drop-shadow-md",
+            "text-6xl font-semibold text-white drop-shadow-md",
             font.className
           )}
         >
-          <LockClosedIcon className='h-11 w-11' />
           Auth
         </h1>
         <p className='text-white text-lg'>A simple authentication service</p>
