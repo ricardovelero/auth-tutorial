@@ -49,7 +49,7 @@ export function LoginForm() {
     <CardWrapper
       headerLabel={"Welcome back"}
       backButtonLabel={"Don't have an account?"}
-      backButtonHref={"/auht/register"}
+      backButtonHref={"/auth/register"}
       showSocial
     >
       <Form {...form}>
