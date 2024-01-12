@@ -15,9 +15,9 @@ export default function SettingsPage() {
   };
 
   return (
-    <div>
+    <div className='bg-white p-10 rounded-xl'>
       {/* <p>{JSON.stringify(session)}</p> */}
-      <p>{JSON.stringify(user)}</p>
+      {/* <p>{JSON.stringify(user)}</p> */}
       <button onClick={handleclick} type='submit'>
         Sign out
       </button>
