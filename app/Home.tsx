@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import LoginButton from "@/components/auth/login-button";
-import { font } from "./page";
+import { fontPoppins } from "@/lib/fonts";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <h1
           className={cn(
             "text-6xl font-semibold text-white drop-shadow-md",
-            font.className
+            fontPoppins.className
           )}
         >
           Auth
