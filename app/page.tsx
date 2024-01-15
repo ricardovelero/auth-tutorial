@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import LoginButton from "@/components/auth/login-button";
 import { LockClosedIcon } from "@radix-ui/react-icons";
 
-const font = Poppins({
+export const font = Poppins({
   subsets: ["latin"],
   weight: ["600"],
 });
