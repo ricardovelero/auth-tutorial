@@ -5,36 +5,9 @@ import type { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Github from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
-import Email from "next-auth/providers/email";
-import * as postmark from "postmark";
 
 export default {
   providers: [
-    Email({
-      server: process.env.EMAIL_SERVER,
-      from: process.env.EMAIL_FROM,
-      sendVerificationRequest({
-        identifier: email,
-        url,
-        provider: { server, from },
-      }) {
-        const { host } = new URL(url);
-        const serverToken = process.env.POSTMARK_API_KEY;
-        if (serverToken) {
-          const clientPostmark = new postmark.ServerClient(serverToken);
-          clientPostmark.sendEmail({
-            From: from,
-            To: email,
-            Subject: `Sign in to ${host}`,
-            TextBody: text({ url, host }),
-            HtmlBody: html({ url, host, email }),
-            TrackOpens: true,
-          });
-        } else {
-          console.log("No Postmark token found.");
-        }
-      },
-    }),
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
